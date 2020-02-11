@@ -12,8 +12,30 @@ const Form = ({ inputValue, changeInputValue }) => {
     changeInputValue(evt.target.value);
   };
 
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    console.log('Soumission du formulaire');
+
+    // ACTIONS
+    // Intention : nouvelle action => SEND_MESSAGE
+    // action creator
+    //
+    // REDUCER
+    // case dans le reducer pour gérer l'action
+    // recup les data du state : valeur du champ et les messages
+    // impacter le state :
+    //   - insérer le nouveau message dans la liste des messages
+    //   - reset du champ
+    //
+    // CONTAINER
+    // Préparer une prop pour le composant Form
+    // dispatch de l'action lors de la soumission du form
+    //
+    // ----------------------
+  };
+
   return (
-    <FormStyled>
+    <FormStyled onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Votre message"
