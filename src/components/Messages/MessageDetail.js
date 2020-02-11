@@ -1,17 +1,34 @@
 // == Import npm
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 // == Import
 
 // == Composant
-const MessageDetail = () => (
-  <div className="message">
-    <div className="message-author">Bob le magnifique</div>
-    <div className="message-body">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+const MessageDetail = ({ author, content, ownMessage }) => {
+  const cssClassNames = classNames({
+    message: true,
+    'message--own-message': ownMessage,
+  });
+
+  return (
+    <div className={cssClassNames}>
+      <div className="message-author">{author}</div>
+      <div className="message-body">{content}</div>
     </div>
-  </div>
-);
+  );
+};
+
+MessageDetail.propTypes = {
+  author: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  ownMessage: PropTypes.bool,
+};
+
+MessageDetail.defaultProps = {
+  ownMessage: true,
+};
 
 // == Export
 export default MessageDetail;
