@@ -6,13 +6,17 @@ import Settings from 'src/components/Settings';
 import Messages from 'src/components/Messages';
 import Form from 'src/components/Form';
 
+import GlobalStyles from 'src/styles/GlobalStyles';
+import ChatStyled from './ChatStyled';
+
 // == Composant
 const Chat = () => (
-  <div>
+  <ChatStyled>
+    <GlobalStyles />
     <Settings />
     <Messages />
     <Form />
-  </div>
+  </ChatStyled>
 );
 
 // == Export
