@@ -7,9 +7,9 @@ import { Send } from 'react-feather';
 import FormStyled from './FormStyled';
 
 // == Composant
-const Form = ({ inputValue }) => {
+const Form = ({ inputValue, changeInputValue }) => {
   const handleChange = (evt) => {
-    console.log('Le champ évolue', evt.target.value);
+    changeInputValue(evt.target.value);
   };
 
   return (
@@ -30,6 +30,7 @@ const Form = ({ inputValue }) => {
 
 Form.propTypes = {
   inputValue: PropTypes.string.isRequired,
+  changeInputValue: PropTypes.func.isRequired,
 };
 
 // == Export

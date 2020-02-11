@@ -1,3 +1,6 @@
+/* eslint-disable no-console */
+import { CHANGE_MESSAGE_INPUT } from 'src/actions/chat';
+
 // Initial State
 const initialState = {
   loading: false,
@@ -20,12 +23,20 @@ const initialState = {
       author: 'Bob',
     },
   ],
-  inputMessage: 'depuis le state de redux',
+  inputMessage: '',
 };
 
 // Reducer
 const chatReducer = (state = initialState, action = {}) => {
+  console.log('chat reducer : ', action);
+
   switch (action.type) {
+    case CHANGE_MESSAGE_INPUT:
+      return {
+        ...state, // state actuel
+        inputMessage: action.value,
+      };
+
     // entré dans aucune action : je retourne le state sans modif
     default:
       return state;
