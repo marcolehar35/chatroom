@@ -5,8 +5,11 @@ import React from 'react';
 
 // == Composant
 const MessageDetail = () => (
-  <div>
-    MessageDetail
+  <div className="message">
+    <div className="message-author">Bob le magnifique</div>
+    <div className="message-body">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+    </div>
   </div>
 );
 
