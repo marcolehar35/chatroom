@@ -2,12 +2,13 @@
 import React from 'react';
 
 // == Import
+import SettingsStyled from './SettingsStyled';
 
 // == Composant
 const Settings = () => (
-  <div>
+  <SettingsStyled>
     Settings
-  </div>
+  </SettingsStyled>
 );
 
 // == Export
