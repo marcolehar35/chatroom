@@ -3,14 +3,15 @@ import React from 'react';
 
 // == Import
 import MessageDetail from 'src/components/Messages/MessageDetail';
+import MessagesStyled from './MessagesStyled';
 
 // == Composant
 const Messages = () => (
-  <div>
+  <MessagesStyled>
     <MessageDetail />
     <MessageDetail />
     <MessageDetail />
-  </div>
+  </MessagesStyled>
 );
 
 // == Export

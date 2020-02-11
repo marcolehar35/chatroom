@@ -8,6 +8,8 @@ const ChatStyled = styled.div`
   background-color: ${lighten(theme.mainColor, 60)};
   height: 100vh;
   box-shadow: 0 0 3em rgba(0, 0, 0, .4);
+  display: flex;
+  flex-direction: column;
 `;
 
 export default ChatStyled;
