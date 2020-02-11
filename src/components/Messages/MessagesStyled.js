@@ -14,8 +14,16 @@ const MessagesStyled = styled.div`
   .message {
     margin-bottom: 2rem;
 
+    &--own-message {
+      text-align: right;
+    }
+    &--own-message &-body::before {
+      right: 24px;
+    }
+
     &-author {
       font-size: .9em;
+      margin: 0 1.2rem;
     }
 
     &-body {
