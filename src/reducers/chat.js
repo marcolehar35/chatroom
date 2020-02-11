@@ -1,5 +1,8 @@
 // Initial State
 const initialState = {
+  loading: false,
+  username: 'Jean',
+  // ...
   messages: [
     {
       id: 1,
@@ -17,6 +20,7 @@ const initialState = {
       author: 'Bob',
     },
   ],
+  inputMessage: 'depuis le state de redux',
 };
 
 // Reducer
