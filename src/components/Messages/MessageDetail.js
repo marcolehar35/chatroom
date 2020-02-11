@@ -27,7 +27,7 @@ MessageDetail.propTypes = {
 };
 
 MessageDetail.defaultProps = {
-  ownMessage: true,
+  ownMessage: false,
 };
 
 // == Export
