@@ -5,6 +5,9 @@ import { render } from 'react-dom';
 // == Import : local
 // Composants
 import Chat from 'src/components/Chat';
+// import store from 'src/store';
+
+// console.log(store.getState());
 
 // == Render
 // 1. Élément React racine (celui qui contient l'ensemble de l'app)
