@@ -50,6 +50,7 @@
     "prop-types": "*",
     "react": "*",
     "react-dom": "*",
-    "styled-components": "*"
+    "styled-components": "*",
+    "tinycolor2": "^1.4.1"
   }
 }
