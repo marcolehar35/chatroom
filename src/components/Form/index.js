@@ -7,7 +7,7 @@ import { Send } from 'react-feather';
 import FormStyled from './FormStyled';
 
 // == Composant
-const Form = ({ inputValue, changeInputValue }) => {
+const Form = ({ inputValue, changeInputValue, sendMessage }) => {
   const handleChange = (evt) => {
     changeInputValue(evt.target.value);
   };
@@ -15,23 +15,8 @@ const Form = ({ inputValue, changeInputValue }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     console.log('Soumission du formulaire');
-
-    // ACTIONS
-    // Intention : nouvelle action => SEND_MESSAGE
-    // action creator
-    //
-    // REDUCER
-    // case dans le reducer pour gérer l'action
-    // recup les data du state : valeur du champ et les messages
-    // impacter le state :
-    //   - insérer le nouveau message dans la liste des messages
-    //   - reset du champ
-    //
-    // CONTAINER
-    // Préparer une prop pour le composant Form
-    // dispatch de l'action lors de la soumission du form
-    //
-    // ----------------------
+    // La prop venant du container (action qui sera dispatchée)
+    sendMessage();
   };
 
   return (
@@ -53,6 +38,7 @@ const Form = ({ inputValue, changeInputValue }) => {
 Form.propTypes = {
   inputValue: PropTypes.string.isRequired,
   changeInputValue: PropTypes.func.isRequired,
+  sendMessage: PropTypes.func.isRequired,
 };
 
 // == Export

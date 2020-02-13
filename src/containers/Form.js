@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Form from 'src/components/Form';
-import { changeMessageInput } from 'src/actions/chat';
+import { changeMessageInput, sendNewMessage } from 'src/actions/chat';
 
 // == Data / state
 const mapStateToProps = (state) => ({
@@ -14,6 +14,11 @@ const mapDispatchToProps = (dispatch) => ({
     // Déclencher une action qui sera interceptée par le reducer
     // dispatch({ type: 'CHANGE_MESSAGE_INPUT', value: value });
     dispatch(changeMessageInput(value));
+  },
+  // propAttendueParLeComposant: fonctionQuiSeraExecutée
+  sendMessage: () => {
+    const action = sendNewMessage();
+    dispatch(action);
   },
 });
 
