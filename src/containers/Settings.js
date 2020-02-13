@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import Settings from 'src/components/Settings';
-import { changeField } from 'src/actions/chat';
+import { changeField, login } from 'src/actions/chat';
 
 // == Data / state
 const mapStateToProps = (state) => ({
@@ -13,6 +13,11 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   changeFieldValue: (name, value) => {
     dispatch(changeField(name, value));
+  },
+  login: () => {
+    // eslint-disable-next-line no-console
+    console.log('Lancement de la connexion...');
+    dispatch(login());
   },
 });
 
