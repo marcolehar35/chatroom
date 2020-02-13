@@ -4,6 +4,7 @@ import {
   SEND_NEW_MESSAGE,
   CHANGE_FIELD,
   LOGIN,
+  SAVE_USERNAME,
 } from 'src/actions/chat';
 
 // Initial State
@@ -79,6 +80,13 @@ const chatReducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loading: true,
+      };
+
+    case SAVE_USERNAME:
+      return {
+        ...state,
+        username: action.username,
+        loading: false,
       };
 
     // entré dans aucune action : je retourne le state sans modif

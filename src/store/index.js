@@ -3,13 +3,16 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 // middlewares
 import loggerMiddleware from 'src/middlewares/loggerMiddleware';
+import authMiddleware from 'src/middlewares/authMiddleware';
+
 // reducer
 import reducer from 'src/reducers/chat';
 
 const enhancers = composeWithDevTools(
   applyMiddleware(
-    loggerMiddleware,
-    // ... d'autres middleware
+    loggerMiddleware, // 1
+    authMiddleware, // 2
+    // ... d'autres middlewares
   ),
 );
 
