@@ -2,6 +2,7 @@
 import {
   CHANGE_MESSAGE_INPUT,
   SEND_NEW_MESSAGE,
+  CHANGE_FIELD,
 } from 'src/actions/chat';
 
 // Initial State
@@ -26,6 +27,8 @@ const initialState = {
       author: 'Bob',
     },
   ],
+  email: '',
+  password: '',
   inputMessage: '',
 };
 
@@ -58,6 +61,18 @@ const chatReducer = (state = initialState, action = {}) => {
         inputMessage: '',
       };
     }
+
+    case CHANGE_FIELD:
+      return {
+        ...state,
+        // On se sert de la valeur stockée dans action.name
+        // si action.name vaut email : voila les étapes
+        // [action.name]: action.value,
+        // ['email']: action.value,
+        // 'email': action.value,
+        // email: action.value,
+        [action.name]: action.value,
+      };
 
     // entré dans aucune action : je retourne le state sans modif
     default:
