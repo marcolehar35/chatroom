@@ -2,7 +2,7 @@
 import React from 'react';
 
 // == Import
-import Settings from 'src/components/Settings';
+import Settings from 'src/containers/Settings';
 import Messages from 'src/containers/Messages';
 import Form from 'src/containers/Form';
 
