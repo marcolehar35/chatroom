@@ -7,6 +7,8 @@ const MessagesStyled = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
   height: 100%;
+  scroll-behavior: smooth;
+
   &::-webkit-scrollbar {
     background-color: none;
   }
@@ -14,10 +16,18 @@ const MessagesStyled = styled.div`
   .message {
     margin-bottom: 2rem;
 
+
     &--own-message {
       text-align: right;
     }
-    &--own-message &-body::before {
+    &--own-message .message-body {
+      color: white;
+      background-color: ${theme.mainColor};
+    }
+    &--own-message .message-body::before {
+      border-bottom: 12px solid ${theme.mainColor};
+      border-left: 12px solid transparent;
+      left: auto;
       right: 24px;
     }
 
@@ -27,13 +37,17 @@ const MessagesStyled = styled.div`
     }
 
     &-body {
+      max-width: 65%;
+      animation: grow .3s cubic-bezier(.3,1.08,.66,1.31);
       margin-top: 1em;
       padding: .8em 1.3em;
       color: ${theme.mainColor};
       background-color: #fff;
       border-radius: 1em;
-      display: inline-block;
       position: relative;
+
+      display: inline-block;
+      word-break: break-word;
 
       &::before {
         content: '';
