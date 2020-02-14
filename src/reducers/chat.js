@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
 import {
   CHANGE_MESSAGE_INPUT,
-  SEND_NEW_MESSAGE,
   CHANGE_FIELD,
   LOGIN,
   SAVE_USERNAME,
+  TOGGLE_SETTINGS,
   SAVE_MESSAGE,
 } from 'src/actions/chat';
 
@@ -30,6 +30,7 @@ const initialState = {
       author: 'Bob',
     },
   ],
+  settingsOpen: false,
   email: '',
   password: '',
   inputMessage: '',
@@ -80,7 +81,11 @@ const chatReducer = (state = initialState, action = {}) => {
         username: action.username,
         loading: false,
       };
-
+    case TOGGLE_SETTINGS:
+      return {
+        ...state,
+        settingsOpen: !state.settingsOpen,
+      };
     // entré dans aucune action : je retourne le state sans modif
     default:
       return state;

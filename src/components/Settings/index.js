@@ -1,6 +1,7 @@
 // == Import npm
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 // == Import
 import Field from 'src/components/Field';
@@ -13,6 +14,8 @@ const Settings = ({
   passwordValue,
   changeFieldValue,
   login,
+  isOpen,
+  toggleSettings,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -24,7 +27,10 @@ const Settings = ({
   };
 
   return (
-    <SettingsStyled>
+    <SettingsStyled className={classNames({
+      'settings--open': isOpen,
+    })}>
+      <div className="toggle-settings" onClick={toggleSettings} />
       <form autoComplete="off" onSubmit={handleSubmit}>
         <Field
           name="email"
@@ -51,6 +57,8 @@ Settings.propTypes = {
   passwordValue: PropTypes.string.isRequired,
   changeFieldValue: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  toggleSettings: PropTypes.func.isRequired,
 };
 
 // == Export

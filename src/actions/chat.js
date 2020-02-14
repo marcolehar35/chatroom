@@ -6,6 +6,7 @@ export const LOGIN = 'LOGIN';
 export const SAVE_USERNAME = 'SAVE_USERNAME';
 export const WS_CONNECT = 'WS_CONNECT';
 export const SAVE_MESSAGE = 'SAVE_MESSAGE';
+export const TOGGLE_SETTINGS = 'TOGGLE_SETTINGS';
 
 
 // Creators
@@ -40,4 +41,8 @@ export const wsConnect = () => ({
 export const saveMessage = (message) => ({
   type: SAVE_MESSAGE,
   message,
+});
+
+export const toggleSettings = () => ({
+  type: TOGGLE_SETTINGS,
 });
