@@ -8,6 +8,11 @@ import { Provider } from 'react-redux';
 import Chat from 'src/components/Chat';
 import store from 'src/store';
 
+// action creator pour la connexion au WebSocket
+import { wsConnect } from 'src/actions/chat';
+// dispactch la volonté de connecter le WebSocket
+store.dispatch(wsConnect());
+
 // == Render
 // 1. Élément React racine (celui qui contient l'ensemble de l'app)
 //    => crée une structure d'objets imbriqués (DOM virtuel)
