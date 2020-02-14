@@ -2,16 +2,18 @@ import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 // middlewares
-import loggerMiddleware from 'src/middlewares/loggerMiddleware';
+// import loggerMiddleware from 'src/middlewares/loggerMiddleware';
 import authMiddleware from 'src/middlewares/authMiddleware';
+import socketMiddleware from 'src/middlewares/socketMiddleware';
 
 // reducer
 import reducer from 'src/reducers/chat';
 
 const enhancers = composeWithDevTools(
   applyMiddleware(
-    loggerMiddleware, // 1
+    // loggerMiddleware, // 1
     authMiddleware, // 2
+    socketMiddleware,
     // ... d'autres middlewares
   ),
 );

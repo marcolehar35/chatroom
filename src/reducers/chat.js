@@ -5,6 +5,7 @@ import {
   CHANGE_FIELD,
   LOGIN,
   SAVE_USERNAME,
+  SAVE_MESSAGE,
 } from 'src/actions/chat';
 
 // Initial State
@@ -45,21 +46,12 @@ const chatReducer = (state = initialState, action = {}) => {
         inputMessage: action.value,
       };
 
-    case SEND_NEW_MESSAGE: {
-      // temporaire : on va améliorer ça :)
-      const messageId = Math.max(...state.messages.map((message) => message.id)) + 1;
-
-      const newMessage = {
-        id: messageId,
-        content: state.inputMessage,
-        author: state.username,
-      };
-
+    case SAVE_MESSAGE: {
       return {
         ...state,
         // messages sera un nouveau tableau (immutabilité) avec le contenu de l'ancien
         // + le nouveau message
-        messages: [...state.messages, newMessage],
+        messages: [...state.messages, action.message],
         inputMessage: '',
       };
     }

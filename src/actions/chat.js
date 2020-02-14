@@ -5,6 +5,8 @@ export const CHANGE_FIELD = 'CHANGE_FIELD';
 export const LOGIN = 'LOGIN';
 export const SAVE_USERNAME = 'SAVE_USERNAME';
 export const WS_CONNECT = 'WS_CONNECT';
+export const SAVE_MESSAGE = 'SAVE_MESSAGE';
+
 
 // Creators
 export const changeMessageInput = (value) => ({
@@ -33,4 +35,9 @@ export const saveUsername = (username) => ({
 
 export const wsConnect = () => ({
   type: WS_CONNECT,
+});
+
+export const saveMessage = (message) => ({
+  type: SAVE_MESSAGE,
+  message,
 });
